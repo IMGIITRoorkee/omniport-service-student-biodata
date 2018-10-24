@@ -1,0 +1,6 @@
+nomenclature:
+  name: biodata
+  verboseName: Biodata
+baseUrls:
+  http: biodata/
+  ws: biodata/

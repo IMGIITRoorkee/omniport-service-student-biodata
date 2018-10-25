@@ -22,7 +22,7 @@ class Project(AbstractProject, BaseModel):
         Meta class for Project
         """
 
-        swappable = swapper.swappable_setting('biodata', 'Project')
+        swappable = swapper.swappable_setting('student_biodata', 'Project')
 
     def __str__(self):
         """

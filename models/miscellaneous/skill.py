@@ -62,4 +62,4 @@ class Skill(AbstractSkill):
         Meta class for Skill
         """
 
-        swappable = swapper.swappable_setting('biodata', 'Skill')
+        swappable = swapper.swappable_setting('student_biodata', 'Skill')

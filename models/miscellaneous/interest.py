@@ -9,7 +9,7 @@ class Interest(AbstractInterest):
     This model contains the interests of the student
     """
 
-    student = models.OneToOneField(
+    student = models.ForeignKey(
         to=swapper.get_model_name('kernel', 'Student'),
         on_delete=models.CASCADE,
     )

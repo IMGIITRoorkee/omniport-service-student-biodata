@@ -9,12 +9,12 @@ class AbstractAchievement(Model):
     This model contains information about the achievements of a student
     """
 
-    student = models.OneToOneField(
+    student = models.ForeignKey(
         to=swapper.get_model_name('kernel', 'Student'),
         on_delete=models.CASCADE,
     )
 
-    achievements = models.TextField()
+    achievement = models.TextField()
 
     class Meta:
         """
@@ -30,8 +30,8 @@ class AbstractAchievement(Model):
         """
 
         student = self.student
-        achievements = self.achievements
-        return f'{student}: {achievements}'
+        achievement = self.achievement
+        return f'{student}: {achievement}'
 
 
 class Achievement(AbstractAchievement):

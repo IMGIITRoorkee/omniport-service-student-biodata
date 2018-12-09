@@ -5,59 +5,50 @@ from django.db import models
 
 from kernel.models.root import Model
 
+from student_biodata.models.abstarct_classes.base_model import BaseModel
 
-class AbstractReference(Model):
+class AbstractReferee(BaseModel):
     """
-    This model contains information about the reference of a student
-    """
+    This model contains information about the referee of a student
+    """ 
 
-    student = models.ForeignKey(
-        to=swapper.get_model_name('kernel', 'Student'),
-        on_delete=models.CASCADE,
-    )
-    
     referee = models.CharField(
         max_length=255,
     )
 
     designation = models.CharField(
-        max_length=3,
+        max_length=127,
     )
 
     institute = models.CharField(
         max_length=255,
     )
 
-    body = models.TextField(
-        blank=True,
-        help_text="This field contains body of the reference letter (OPTIONAL)"
-    )
-
     contact_information = contenttypes_fields.GenericRelation(
         to='kernel.ContactInformation',
-        related_query_name='reference',
+        related_query_name='referee',
         content_type_field='entity_content_type',
         object_id_field='entity_object_id',
     )
 
     class Meta:
         """
-        Meta class for AbstractReference
+        Meta class for AbstractReferee
         """
         abstract = True
         
 
-class Reference(AbstractReference):
+class Referee(AbstractReferee):
     """
-    This class implements Reference
+    This class implements Referee
     """
 
     class Meta:
         """
-        Meta class for Reference
+        Meta class for Referee
         """
 
-        swappable = swapper.swappable_setting('student_biodata', 'Reference')
+        swappable = swapper.swappable_setting('student_biodata', 'Referee')
 
     def __str__(self):
         """

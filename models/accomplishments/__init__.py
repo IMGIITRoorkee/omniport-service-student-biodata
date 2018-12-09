@@ -1,3 +1,4 @@
 from student_biodata.models.accomplishments import education
 from student_biodata.models.accomplishments.achievement import Achievement
 from student_biodata.models.accomplishments.experience import Experience
+from student_biodata.models.accomplishments.referee import Referee

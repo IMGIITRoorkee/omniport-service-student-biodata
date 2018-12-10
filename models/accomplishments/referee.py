@@ -5,7 +5,7 @@ from django.db import models
 
 from kernel.models.root import Model
 
-from student_biodata.models.abstarct_classes.base_model import BaseModel
+from student_biodata.models.abstract_classes.base_model import BaseModel
 
 class AbstractReferee(BaseModel):
     """

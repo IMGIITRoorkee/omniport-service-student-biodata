@@ -14,6 +14,7 @@ models = [
     'Profile',
     'Book',
     'Paper',
+    'Referee',
 ]
 
 for model in models:

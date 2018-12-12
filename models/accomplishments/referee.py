@@ -1,5 +1,4 @@
 import swapper
-from django.contrib.contenttypes import fields as contenttypes_fields
 
 from django.db import models
 
@@ -24,11 +23,13 @@ class AbstractReferee(BaseModel):
         max_length=255,
     )
 
-    contact_information = contenttypes_fields.GenericRelation(
-        to='kernel.ContactInformation',
-        related_query_name='referee',
-        content_type_field='entity_content_type',
-        object_id_field='entity_object_id',
+    phone_number = models.CharField(
+        max_length=15,
+        blank=True
+    )
+
+    email = models.EmailField(
+        max_length=255,
     )
 
     class Meta:

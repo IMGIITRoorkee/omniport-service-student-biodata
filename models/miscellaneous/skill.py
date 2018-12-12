@@ -2,18 +2,14 @@ import swapper
 from django.db import models
 
 from kernel.models.root import Model
+from student_biodata.models.abstract_classes.base_model import BaseModel
 
 
-class AbstractSkill(Model):
+class AbstractSkill(BaseModel):
     """
     This abstract model holds the information about the Skills of a
     student
     """
-
-    student = models.OneToOneField(
-        to=swapper.get_model_name('kernel', 'Student'),
-        on_delete=models.CASCADE,
-    )
 
     computer_languages = models.TextField(
         blank=True,

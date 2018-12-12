@@ -2,17 +2,13 @@ import swapper
 from django.db import models
 
 from common_biodata.models import AbstractInterest
+from student_biodata.models.abstract_classes.base_model import BaseModel
 
 
-class Interest(AbstractInterest):
+class Interest(AbstractInterest, BaseModel):
     """
     This model contains the interests of the student
     """
-
-    student = models.ForeignKey(
-        to=swapper.get_model_name('kernel', 'Student'),
-        on_delete=models.CASCADE,
-    )
 
     class Meta:
         """

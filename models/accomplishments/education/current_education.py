@@ -2,18 +2,13 @@ import swapper
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
-from kernel.models.root import Model
+from student_biodata.models.abstract_classes.base_model import BaseModel
 
 
-class AbstractCurrentEducation(Model):
+class AbstractCurrentEducation(BaseModel):
     """
     This model contains information about the current education of a student
     """
-
-    student = models.ForeignKey(
-        to=swapper.get_model_name('kernel', 'Student'),
-        on_delete=models.CASCADE,
-    )
 
     semester_number = models.IntegerField()
 

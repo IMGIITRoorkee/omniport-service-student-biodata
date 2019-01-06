@@ -4,6 +4,7 @@ from django.db import models
 from kernel.utils.upload_to import UploadTo
 
 from common_biodata.models.profile.profile import AbstractProfile
+from student_biodata.constants.theme_colors import THEME_COLORS
 
 
 class Profile(AbstractProfile):
@@ -24,6 +25,15 @@ class Profile(AbstractProfile):
         null=True,
         upload_to=UploadTo('student_biodata', 'resume')
     )
+
+    theme = models.CharField(
+        max_length=7,
+        choices=THEME_COLORS,
+        default="teal",
+        blank=True,
+        null=True,
+    )
+
     class Meta:
         """
         Meta class for AbstractProfile

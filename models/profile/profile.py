@@ -29,7 +29,7 @@ class Profile(AbstractProfile):
     theme = models.CharField(
         max_length=7,
         choices=THEME_COLORS,
-        default="teal",
+        default="blue",
         blank=True,
         null=True,
     )

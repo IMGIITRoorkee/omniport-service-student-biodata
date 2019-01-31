@@ -10,4 +10,5 @@ THEME_COLORS = (
     ("purple","Lightning Purple"),
     ("pink","Proud Pink"),
     ("black","Wicked Black"),
+    ("zero","No Theme"),
 )

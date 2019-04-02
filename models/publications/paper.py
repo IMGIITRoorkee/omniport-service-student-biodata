@@ -11,7 +11,7 @@ class Paper(AbstractPaper, BaseModel):
     This model stores information about a paper by a student
     """
 
-    file = models.FileField(
+    paper = models.FileField(
         upload_to=UploadTo('student_biodata', 'papers'),
         blank=True,
         null=True,

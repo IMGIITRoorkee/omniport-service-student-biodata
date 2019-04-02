@@ -10,7 +10,12 @@ class AbstractCurrentEducation(BaseModel):
     This model contains information about the current education of a student
     """
 
-    semester_number = models.IntegerField()
+    semester = models.IntegerField(
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(10)
+        ]
+    )
 
     cgpa = models.DecimalField(
         verbose_name='CGPA',
@@ -42,7 +47,7 @@ class AbstractCurrentEducation(BaseModel):
         """
 
         abstract = True
-        unique_together = ('student', 'semester_number')
+        unique_together = ('student', 'semester')
 
     def __str__(self):
         """
@@ -51,8 +56,8 @@ class AbstractCurrentEducation(BaseModel):
         """
 
         student = self.student
-        semester_number = self.semester_number
-        return f'{student}: {semester_number}'
+        semester = self.semester
+        return f'{student}: {semester}'
 
 
 class CurrentEducation(AbstractCurrentEducation):

@@ -4,13 +4,14 @@ from django.db import models
 from kernel.utils.upload_to import UploadTo
 
 from common_biodata.models.profile.profile import AbstractProfile
-from student_biodata.constants.theme_colors import THEME_COLORS
+from common_biodata.constants.theme_colors import THEME_COLORS
 
 
 class Profile(AbstractProfile):
     """
     This model contains informatation about the home page of the student
     """
+    
     student = models.OneToOneField(
         to=swapper.get_model_name('kernel', 'Student'),
         on_delete=models.CASCADE,

@@ -2,7 +2,7 @@ import swapper
 
 from django.db import models
 
-from kernel.models.root import Model
+from formula_one.models.base import Model
 
 from student_biodata.models.abstract_classes.base_model import BaseModel
 

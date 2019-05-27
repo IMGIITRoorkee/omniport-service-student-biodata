@@ -4,7 +4,7 @@ from django.conf import settings
 import django.core.validators
 from django.db import migrations, models
 import django.db.models.deletion
-import kernel.utils.upload_to
+import formula_one.utils.upload_to
 
 
 class Migration(migrations.Migration):
@@ -124,7 +124,7 @@ class Migration(migrations.Migration):
                 ('pages', models.CharField(blank=True, max_length=31)),
                 ('volumes', models.CharField(blank=True, max_length=31)),
                 ('journal', models.CharField(max_length=255)),
-                ('paper', models.FileField(blank=True, null=True, upload_to=kernel.utils.upload_to.UploadTo('student_biodata', 'papers'))),
+                ('paper', models.FileField(blank=True, null=True, upload_to=formula_one.utils.upload_to.UploadTo('student_biodata', 'papers'))),
                 ('student', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.KERNEL_STUDENT_MODEL)),
             ],
             options={
@@ -184,7 +184,7 @@ class Migration(migrations.Migration):
                 ('handle', models.SlugField(blank=True, max_length=31, unique=True)),
                 ('description', models.TextField()),
                 ('custom_website', models.BooleanField(default=False)),
-                ('resume', models.FileField(blank=True, null=True, upload_to=kernel.utils.upload_to.UploadTo('student_biodata', 'resume'))),
+                ('resume', models.FileField(blank=True, null=True, upload_to=formula_one.utils.upload_to.UploadTo('student_biodata', 'resume'))),
                 ('theme', models.CharField(blank=True, choices=[('red', 'Luscious Red'), ('orange', 'Maverick Orange'), ('yellow', 'Sunkissed Yellow'), ('olive', 'Disgusting Olive'), ('green', 'Earthly Green'), ('teal', 'Aqua Teal'), ('blue', 'Default Blue'), ('violet', 'Rich Lavender'), ('purple', 'Lightning Purple'), ('pink', 'Proud Pink'), ('black', 'Wicked Black'), ('zero', 'No Theme')], default='blue', max_length=7, null=True)),
                 ('student', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.KERNEL_STUDENT_MODEL)),
             ],
@@ -206,7 +206,7 @@ class Migration(migrations.Migration):
                 ('topic', models.CharField(max_length=127)),
                 ('field', models.CharField(max_length=127)),
                 ('description', models.TextField(blank=True)),
-                ('image', models.ImageField(blank=True, null=True, upload_to=kernel.utils.upload_to.UploadTo('student_biodata', 'projects'))),
+                ('image', models.ImageField(blank=True, null=True, upload_to=formula_one.utils.upload_to.UploadTo('student_biodata', 'projects'))),
                 ('student', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.KERNEL_STUDENT_MODEL)),
             ],
             options={

@@ -2,7 +2,7 @@ import swapper
 from django.db import models
 
 from common_biodata.models.engagements.project import AbstractProject
-from kernel.utils.upload_to import UploadTo
+from formula_one.utils.upload_to import UploadTo
 from student_biodata.models.abstract_classes.base_model import BaseModel
 
 

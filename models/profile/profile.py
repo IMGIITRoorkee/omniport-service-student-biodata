@@ -1,7 +1,7 @@
 import swapper
 from django.db import models
 
-from kernel.utils.upload_to import UploadTo
+from formula_one.utils.upload_to import UploadTo
 
 from common_biodata.models.profile.profile import AbstractProfile
 from common_biodata.constants.theme_colors import THEME_COLORS

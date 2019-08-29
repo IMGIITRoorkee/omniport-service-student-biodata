@@ -22,6 +22,10 @@ class BaseModel(Model):
         default=True,
     )
 
+    verified = models.BooleanField(
+        default=False,
+    )
+
     class Meta:
         """
         Meta class for BaseModel

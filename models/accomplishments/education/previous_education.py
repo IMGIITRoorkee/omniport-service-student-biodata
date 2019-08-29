@@ -38,10 +38,6 @@ class PreviousEducation(AbstractEducation, BaseModel):
         default=False,
     )
 
-    verified = models.BooleanField(
-        default=False,
-    )
-
     class Meta:
         """
         Meta class for AbstractPreviousEducation

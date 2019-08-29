@@ -37,10 +37,6 @@ class AbstractCurrentEducation(BaseModel):
         ],
     )
 
-    verified = models.BooleanField(
-        default=False,
-    )
-
     class Meta:
         """
         Meta class for AbstractCurrentEducation

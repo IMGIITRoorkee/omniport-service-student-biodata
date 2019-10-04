@@ -3,7 +3,6 @@ from django.db import models
 from student_biodata.models.abstract_classes.base_model import BaseModel
 
 
-
 class AbstractAchievement(BaseModel):
     """
     This model contains information about the achievements of a student

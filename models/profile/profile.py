@@ -11,7 +11,7 @@ class Profile(AbstractProfile):
     """
     This model contains informatation about the home page of the student
     """
-    
+
     student = models.OneToOneField(
         to=swapper.get_model_name('kernel', 'Student'),
         on_delete=models.CASCADE,

@@ -6,10 +6,11 @@ from formula_one.models.base import Model
 
 from student_biodata.models.abstract_classes.base_model import BaseModel
 
+
 class AbstractReferee(BaseModel):
     """
     This model contains information about the referee of a student
-    """ 
+    """
 
     referee = models.CharField(
         max_length=255,
@@ -37,7 +38,7 @@ class AbstractReferee(BaseModel):
         Meta class for AbstractReferee
         """
         abstract = True
-        
+
 
 class Referee(AbstractReferee):
     """

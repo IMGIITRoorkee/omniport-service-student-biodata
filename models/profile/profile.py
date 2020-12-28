@@ -21,6 +21,10 @@ class Profile(AbstractProfile):
         default=False,
     )
 
+    show_cgpa = models.BooleanField(
+        default=True,
+    )
+
     resume = models.FileField(
         blank=True,
         null=True,

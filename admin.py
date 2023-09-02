@@ -8,6 +8,7 @@ models = [
     'Achievement',
     'Experience',
     'Position',
+    'PositionBucket',
     'Project',
     'Interest',
     'Skill',
